@@ -1,5 +1,5 @@
 {
-  "name": "react-default",
+  "name": "goit-react-hw-02-feedback",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -26,13 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nelli-belovol/react-default.git"
+    "url": "git+https://github.com/nelli-belovol/goit-react-hw-02-feedback.git"
   },
   "author": "Nelli Belovol <nelli199020@gmail.com>",
   "bugs": {
-    "url": "https://github.com/nelli-belovol/react-default/issues"
+    "url": "https://github.com/nelli-belovol/goit-react-hw-02-feedback/issues"
   },
-  "homepage": "https://nelli-belovol.github.io/react-default",
+  "homepage": "https://nelli-belovol.github.io/goit-react-hw-02-feedback",
   "eslintConfig": {
     "extends": [
       "react-app",
