@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import shortid from 'shortid';
+
+import { Statistics } from './Statistics.jsx';
+import { FeedbackOptions } from './FeedbackOptions.jsx';
+import { Section } from './Section.jsx';
+import { Notification } from './Notification.jsx';
 
 export default class Feedback extends Component {
   state = {
@@ -12,8 +16,9 @@ export default class Feedback extends Component {
     const { target } = e; // сохраняем в переменную, если нужно при ассинхронном запросе достучаться до таргета (иначе null)
     switch (target.textContent) {
       case 'good':
-        this.setState(prevState => console.log(prevState.value);
-        return {good: prevState.good + 1});
+        this.setState(prevState => {
+          return { good: prevState.good + 1 };
+        });
         break;
       case 'neutral':
         this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
@@ -43,37 +48,26 @@ export default class Feedback extends Component {
   render() {
     return (
       <>
-        <h1>Please leave feedback</h1>
-        <div className="buttons" onClick={this.handleButton}>
-          {Object.keys(this.state).map(name => {
-            return (
-              <button key={shortid.generate()} type="button">
-                {name}
-              </button>
-            );
-          })}
-        </div>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.handleButton}
+          />
+        </Section>
 
-        <h2>Statistics</h2>
-        <div style={{ display: 'flex' }}>
-          <div>
-            {Object.keys(this.state).map(stat => {
-              return <p key={shortid.generate()}>{stat}:</p>;
-            })}
-          </div>
-          <div>
-            {Object.values(this.state).map(value => {
-              return <p key={shortid.generate()}>{value}</p>;
-            })}
-          </div>
-        </div>
-        <p>
-          Total:<span>{this.countTotalFeedback()}</span>
-        </p>
-        <p>
-          Positive feedback:
-          <span>{this.countPositiveFeedbackPercentage()}%</span>
-        </p>
+        <Section title="Statistics">
+          {this.countTotalFeedback() !== 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="No feedback given" />
+          )}
+        </Section>
       </>
     );
   }
