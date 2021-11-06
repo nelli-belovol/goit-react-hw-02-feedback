@@ -1,0 +1,15 @@
+.feedback{
+    display: flex;
+  flex-direction: column;
+  max-width: 20%;
+  margin: 0 auto;
+}
+
+.feedback__button{
+ margin-left: 10px
+}
+
+.statistics__value{
+  margin-left: 10px;
+  font-weight: 700;
+}

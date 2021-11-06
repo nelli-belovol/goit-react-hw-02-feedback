@@ -5,6 +5,8 @@ import { FeedbackOptions } from './FeedbackOptions.jsx';
 import { Section } from './Section.jsx';
 import { Notification } from './Notification.jsx';
 
+import s from "./Feedback.module.scss"
+
 export default class Feedback extends Component {
   state = {
     good: 0,
@@ -47,7 +49,7 @@ export default class Feedback extends Component {
 
   render() {
     return (
-      <>
+      <div className={s.feedback}>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
@@ -68,7 +70,7 @@ export default class Feedback extends Component {
             <Notification message="No feedback given" />
           )}
         </Section>
-      </>
+      </div>
     );
   }
 }
