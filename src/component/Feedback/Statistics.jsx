@@ -1,5 +1,6 @@
 import React from 'react';
 import shortid from 'shortid';
+import PropTypes from "prop-types";
 
 export const Statistics = ({
   good,
@@ -30,4 +31,11 @@ export const Statistics = ({
       </p>
     </div>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.number,
 };

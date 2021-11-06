@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import shortid from 'shortid';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -13,4 +14,10 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       })}
     </div>
   );
+};
+
+
+FeedbackOptions.propTypes = {
+  onClick: PropTypes.func,
+  name: PropTypes.string,
 };
