@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import { Statistics } from './Statistics.jsx';
-import { FeedbackOptions } from './FeedbackOptions.jsx';
-import { Section } from './Section.jsx';
-import { Notification } from './Notification.jsx';
+import { Statistics } from './Statistics/Statistics.jsx';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.jsx';
+import { Section } from './Section/Section.jsx';
+import { Notification } from './Notification/Notification.jsx';
 
-import s from "./Feedback.module.scss"
+import s from './Feedback.module.scss';
 
 export default class Feedback extends Component {
   state = {

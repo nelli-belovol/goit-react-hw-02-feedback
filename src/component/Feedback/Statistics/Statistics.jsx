@@ -1,7 +1,7 @@
 import React from 'react';
 import shortid from 'shortid';
-import PropTypes from "prop-types";
-import s from "./Feedback.module.scss"
+import PropTypes from 'prop-types';
+import s from './Statistics.module.scss';
 
 export const Statistics = ({
   good,

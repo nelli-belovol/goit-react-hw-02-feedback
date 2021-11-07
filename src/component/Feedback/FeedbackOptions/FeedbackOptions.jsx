@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import shortid from 'shortid';
-import s from "./Feedback.module.scss"
+import s from "./FeedbackOptions.module.scss"
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
