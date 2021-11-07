@@ -16,7 +16,8 @@ export default class Feedback extends Component {
 
   handleButton = e => {
     const { target } = e; // сохраняем в переменную, если нужно при ассинхронном запросе достучаться до таргета (иначе null)
-    switch (target.textContent) {
+
+    switch (target.dataset.name) {
       case 'good':
         this.setState(prevState => {
           return { good: prevState.good + 1 };

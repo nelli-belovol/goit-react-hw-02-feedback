@@ -1,14 +1,19 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import shortid from 'shortid';
-import s from "./FeedbackOptions.module.scss"
+import s from './FeedbackOptions.module.scss';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <div className="buttons" onClick={onLeaveFeedback}>
       {Object.keys(options).map(name => {
         return (
-          <button className={s.feedback__button} key={shortid.generate()} type="button">
+          <button
+            className={s.feedback__button}
+            data-name={name.toLowerCase()}
+            key={shortid.generate()}
+            type="button"
+          >
             {name}
           </button>
         );
@@ -16,7 +21,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     </div>
   );
 };
-
 
 FeedbackOptions.propTypes = {
   onClick: PropTypes.func,
